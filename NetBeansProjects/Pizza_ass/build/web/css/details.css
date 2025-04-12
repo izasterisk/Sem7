@@ -1,0 +1,87 @@
+/* Reset some default browser styles */
+body, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.product-container {
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.product-info {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: #fff;
+    padding: 20px;
+    transition: background-color 0.3s;
+}
+
+.product-info h2, .product-info p {
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.category, .price {
+    font-weight: bold;
+}
+
+.product-details {
+    display: none;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Hover effects */
+.product-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.product-container:hover .product-image img {
+    transform: scale(1.03);
+}
+
+/* Show more details animation */
+.product-details.show {
+    animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

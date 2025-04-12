@@ -1,0 +1,743 @@
+{
+	"info": {
+		"_postman_id": "07c67ab8-2321-48c3-9bfb-7b9d62c75bf6",
+		"name": "Jpos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36747318",
+		"_collection_link": "https://jpos55.postman.co/workspace/JPOS~582a38c3-38fa-4918-888a-00ef7f6cf436/collection/36747318-07c67ab8-2321-48c3-9bfb-7b9d62c75bf6?action=share&source=collection_link&creator=36747318"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"thucnee@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/v1/authen/login",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"v1",
+								"authen",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@jpos.com\",\r\n    \"password\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/v1/authen/login",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"authen",
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authToken",
+								"value": "mbSYVATehwjRp8jZ7JzsTHnMsKDhl2q1HwN4m11r7F9c61byiYrd55o6YBUIgy6l",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/v1/authen/logout",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"v1",
+								"authen",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authToken",
+										"value": "D4kW7ciL2ml3MbukSF3UJfYQwPyEph3KHijnKmAANEGkZkel6DwtvuijMDSTMrCW",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/v1/authen/logout",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"authen",
+										"logout"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"thucnee\",\r\n    \"fullname\": \"thucnee\",\r\n    \"email\": \"thucnee@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/v1/authen/register",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"v1",
+								"authen",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "All Users",
+			"item": [
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Get Categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/categories?page=1&size=20",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products By Categories Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/categories/1/products",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"categories",
+										"1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Product List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/products?page=2&size=20",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Product By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/products/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authorized",
+			"item": [
+				{
+					"name": "Administrator",
+					"item": [
+						{
+							"name": "Get order list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/orders",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/users",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contact List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/contacts?page=1&size=20",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"contacts"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contacts Response List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/contacts-response?page=1&size=20",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"contacts-response"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "status",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Orders' Total Price",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/orders/total",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"orders",
+										"total"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manager",
+					"item": [
+						{
+							"name": "Add New Product - ko dung`",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"cate_id\": 6,\r\n\"name\": \"Customized Design Accessories\",\r\n\"description\": \"Customezid design.\",\r\n\"image\": \"\",\r\n\"price\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/v1/products",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reject Contact Request",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/contacts-response/reject/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"contacts-response",
+										"reject",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "Send Contact",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authToken",
+										"value": "DHmxYlei73fm3h2r2CjoTx59aWPkCT2pqdPD9unAK4ekkjtuoxmSwLO7NcOP0Hd9",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\" : \"test4\",\r\n    \"email\": \"test\",\r\n    \"phone\": \"03123\",\r\n    \"message\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/v1/contacts",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"contacts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Staff",
+					"item": [
+						{
+							"name": "Get Contact List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/contacts?page=1&size=20",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"contacts"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contact Response",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "IdY69hpsSgyzb0VxMeX3dWUgWpnjugKhAoMUvG5hlfI7VrVEtRUZBsFxvdnCQdGH",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "authToken",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contactId\":\"35\",\r\n    \"message\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/v1/staff/contacts-response",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"staff",
+										"contacts-response"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Contact Status",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/contacts-response/1?status=Complete Designing",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"contacts-response",
+										"1"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "Complete Designing"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contacts Response List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/v1/contacts-response?page=1&size=20",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"contacts-response"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "status",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Complete Contact Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"totalPrice\":1500\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/v1/contacts-response/complete/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"v1",
+										"contacts-response",
+										"complete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "DHmxYlei73fm3h2r2CjoTx59aWPkCT2pqdPD9unAK4ekkjtuoxmSwLO7NcOP0Hd9",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "authToken",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "http://localhost:4000/api",
+			"type": "string"
+		}
+	]
+}

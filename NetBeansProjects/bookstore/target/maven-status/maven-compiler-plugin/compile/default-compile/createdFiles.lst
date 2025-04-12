@@ -1,0 +1,3 @@
+com\mycompany\bookstore\config\BookApplication.class
+com\mycompany\bookstore\resource\v1\BookResource.class
+com\mycompany\bookstore\resource\v2\BookResource.class

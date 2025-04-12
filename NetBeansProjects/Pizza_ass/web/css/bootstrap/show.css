@@ -1,0 +1,30 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 27, 2024, 12:25:39 AM
+    Author     : vipha
+*/
+
+.sort_icon{
+    display: flex;
+    justify-content: flex-start;  
+    margin: 10px;
+}
+.icon a{
+    font-size: 20px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    text-decoration: none;
+    padding: 10px 10px;
+    background: #dc3545;
+    color: #ffffff;
+    margin: 0 20px;
+    font-weight: 600;
+}
+
+
+ a:hover {
+    background-color: #2980b9;
+}
